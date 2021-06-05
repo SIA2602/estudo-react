@@ -6,11 +6,10 @@ import ComponentList from './ComponentList';
 function ComponentCard(props){
     const {title} = props;
     const {listaDados} = props
-    const {funcao} = props
-    const {ID} = props
-
+    const {funcao} = props      
+    
     return(
-        <Card id={ID} className="marginRight" title={title} extra={<a onClick={funcao}>More</a>} style={{ width: 300 }}>
+        <Card className="marginRight" title={title} extra={<a onClick={funcao}>More</a>} style={{ width: 300 }}>
             <ComponentList data={listaDados}/>
         </Card>
     )
