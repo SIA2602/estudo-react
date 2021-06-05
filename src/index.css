@@ -1,0 +1,31 @@
+.colorBackground{
+  height: 100vh;
+  width: 100vw;
+  background-color: silver;    
+}
+
+.alignCenter{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.slider{
+  width: 100%; 
+  padding-left: 3.5vw;
+  padding-bottom: 3vh;
+  padding-top: 3vh;  
+}
+
+.slides {
+  display: flex;
+  overflow-x: auto;        
+}
+
+.marginRight{
+  margin-right: 20px;
+}
+
+a{
+  text-align: right;
+}
