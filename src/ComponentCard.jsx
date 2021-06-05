@@ -4,12 +4,14 @@ import 'antd/dist/antd.css';
 import ComponentList from './ComponentList';
 
 function ComponentCard(props){
-    const {Title} = props
-    const {Dados} = props    
+    const {title} = props;
+    const {listaDados} = props
+    const {funcao} = props
+    const {ID} = props
 
     return(
-        <Card className="marginRight" title={Title} extra={<a href={'#'}>More</a>} style={{ width: 300 }}>
-            <ComponentList data={Dados}/>
+        <Card id={ID} className="marginRight" title={title} extra={<a onClick={funcao}>More</a>} style={{ width: 300 }}>
+            <ComponentList data={listaDados}/>
         </Card>
     )
 }
