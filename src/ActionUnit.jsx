@@ -4,7 +4,7 @@ import './index.css'
 function ActionUnit()
 {
     return(                                      
-        document.getElementById("id02").style.display = "block",           
+        document.getElementById("id02").style.display = "flex",           
         document.getElementById("id01").style.display = "none"                
     )       
 }

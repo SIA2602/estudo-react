@@ -4,7 +4,7 @@ import './index.css'
 function ActionUsers()
 {
     return(                                      
-        document.getElementById("id01").style.display = "block",           
+        document.getElementById("id01").style.display = "flex",         
         document.getElementById("id02").style.display = "none"                
     )
 }
