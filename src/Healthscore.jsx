@@ -4,17 +4,18 @@ import { Progress } from 'antd';
 import 'antd/dist/antd.css'
 import './index.css'
 
-function Healthscore()
+function Healthscore(props)
 {
+    const {percent} = props    
     return(                                      
         <Progress
             className="alignCenter"
             type="circle"
-            strokeColor={{
-            '0%': '#108ee9',
-            '100%': '#87d068',
+            strokeColor={{              
+            '0%': 'magenta',            
+            '100%': 'cyan'            
             }}
-            percent={25}
+            percent={percent}
         />                
     )       
 }

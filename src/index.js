@@ -9,6 +9,7 @@ import ActionUsers from './ActionUsers'
 import Healthscore from './Healthscore'
 import Charts from './Charts'
 import Status from './Status'
+import {PlusCircleOutlined} from '@ant-design/icons';
 
 const options = {
     chart: {
@@ -57,9 +58,11 @@ const statusSuccess = <Status message={"inOperation"} type={'success'}/>
 const statusAlert = <Status message={"inAlert"} type={'warning'}/>
 const statusErro = <Status message={"inDowntime"} type={'error'}/>
 
-const bar = <h3><Healthscore />healthscore</h3>
+const bar01 = <h3><Healthscore percent={85}/>healthscore</h3>
+const bar02 = <h3><Healthscore percent={55}/>healthscore</h3>
+const bar03 = <h3><Healthscore percent={23}/>healthscore</h3>
 
-const status = <h3 className="">Status dos Ativos <a onClick={ActionUnit}>More</a><Charts options={options} /> </h3>
+const status = <h3 className="">Status dos Ativos <a onClick={ActionUnit}><PlusCircleOutlined /></a><Charts options={options} /> </h3>
 
 const listaDados =  [
     [status], 
@@ -71,7 +74,7 @@ const listaUnidades = [
     ['Unidade Tobias']
 ]
 
-const listaUser = [[imagem01, statusErro, bar], [imagem02, statusAlert,  bar], [imagem03, statusSuccess, bar]]
+const listaUser = [[imagem01, statusErro, bar01], [imagem02, statusAlert,  bar02], [imagem03, statusSuccess, bar03]]
 
 const unitID = ['Motor H13D-1', 'Motor H13D-1', 'Motor H13D-1']
 
