@@ -6,20 +6,9 @@ import './index.css'
 import ComponentCard from './ComponentCard'
 import ActionUnit from './ActionUnit'
 import ActionUsers from './ActionUsers'
-
-const listaDados =  [
-    ['5 inAlert','2 downTime','1 inOperation'], 
-    ['3 inAlert','1 downTime','6 inOperation']
-] 
-
-const listaUnidades = [
-    ['Unidade Jaguar'],
-    ['Unidade Tobias']
-]
-
-const listaUser = [['Nome01'],['Nome02'],['Nome03'], ['Nome04'], ['Nome05']]
-
-const unitID = [ 1, 2, 1, 1, 2]
+import Healthscore from './Healthscore'
+import Charts from './Charts'
+import Status from './Status'
 
 const options = {
     chart: {
@@ -60,11 +49,37 @@ const options = {
       }]   
 }
 
+const imagem01 = <img className="resizeImage" src="https://tractian-img.s3.amazonaws.com/6d5028682016cb43d02b857d4f1384ae.jpeg"></img>
+const imagem02 = <img className="resizeImage" src="https://tractian-img.s3.amazonaws.com/dc8a497655c688ce381d6a3ba4af684d.jpeg"></img>
+const imagem03 = <img className="resizeImage" src="https://tractian-img.s3.amazonaws.com/6d5028682016cb43d02b857d4f1384ae.jpeg"></img>
+
+const statusSuccess = <Status message={"inOperation"} type={'success'}/>
+const statusAlert = <Status message={"inAlert"} type={'warning'}/>
+const statusErro = <Status message={"inDowntime"} type={'error'}/>
+
+const bar = <h3><Healthscore />healthscore</h3>
+
+const status = <h3 className="">Status dos Ativos <a onClick={ActionUnit}>More</a><Charts options={options} /> </h3>
+
+const listaDados =  [
+    [status], 
+    [status]
+] 
+
+const listaUnidades = [
+    ['Unidade Jaguar'],
+    ['Unidade Tobias']
+]
+
+const listaUser = [[imagem01, statusErro, bar], [imagem02, statusAlert,  bar], [imagem03, statusSuccess, bar]]
+
+const unitID = ['Motor H13D-1', 'Motor H13D-1', 'Motor H13D-1']
+
 function GeraCard() {   
 
     var listaUnit = []  
     for(var i=0; i<listaUnidades.length; i++){        
-        {listaUnit.push(<ComponentCard title={listaUnidades[i]} charts={options} funcao={ActionUnit}/>)}
+        {listaUnit.push(<ComponentCard title={listaUnidades[i]} listaDados={listaDados[i]} funcao={ActionUnit}/>)}
     } 
     
     var listaUsers = []  
