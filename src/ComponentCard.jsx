@@ -4,7 +4,7 @@ import 'antd/dist/antd.css';
 import ComponentList from './ComponentList';
 
 function ComponentCard(props){
-    const {title} = props;
+    const {title} = props
     const {listaDados} = props
     const {funcao} = props 
     const {icon} = props
